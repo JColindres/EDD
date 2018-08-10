@@ -1,0 +1,251 @@
+#include <iostream>
+#include <stdio.h>
+#include "Pila.h"
+using namespace std;
+
+int main()
+{
+    int opcion;
+
+    do
+    {
+        FirstMenu:
+        //system("cls");
+        printf( "\n   ------------------------------------------");
+        printf( "\n          [EDD-B] Practica 1 - 201602713");
+        printf( "\n\n   Introduzca opcion (1-3): ");
+        printf( "\n\n   1. Estructuras de Datos");
+        printf( "\n   2. Hoja de Calculo");
+        printf( "\n   3. Salir.\n\n" );
+        printf( "\n\n   Su eleccion: ");
+
+        scanf( "%d", &opcion );
+
+        /* Inicio del anidamiento */
+
+        switch ( opcion )
+        {
+            case 1:
+                SecondMenu:
+                system("cls");
+                printf( "\n   ------------------------------------------");
+                printf( "\n          1. Estructuras de Datos");
+                printf( "\n\n   Introduzca opcion (1-5): ");
+                printf( "\n\n   1.1. Pila.");
+                printf( "\n   1.2. Cola.");
+                printf( "\n   1.3. Lista Doblemente Enlazada.");
+                printf( "\n   1.4. Lista Circular Simplemente Enlazada.");
+                printf( "\n   1.5. Regresar.\n\n" );
+                printf( "\n\n   Su eleccion: ");
+
+                scanf( "%d", &opcion );
+
+                /* Inicio del anidamiento */
+
+                switch ( opcion )
+                {
+                    case 1:
+                        ThirdMenu:
+                        system("cls");
+                        printf( "\n   ------------------------------------------");
+                        printf( "\n          1.1. Pila");
+                        printf( "\n\n   Introduzca opcion (1-6): ");
+                        printf( "\n\n   1.1. Insertar.");
+                        printf( "\n   1.2. Ver.");
+                        printf( "\n   1.3. Editar");
+                        printf( "\n   1.4. Eliminar");
+                        printf( "\n   1.5. Graficar");
+                        printf( "\n   1.6. Regresar.\n\n" );
+                        printf( "\n\n   Su eleccion: ");
+
+                        scanf( "%d", &opcion );
+
+                        /* Inicio del anidamiento */
+
+                        switch ( opcion )
+                        {
+                            case 1:
+                                insertarPila();
+                                goto ThirdMenu;
+                                break;
+
+                            case 2:
+                                ver();
+                                system("pause");
+                                goto ThirdMenu;
+                                break;
+
+                            case 3:
+                                goto ThirdMenu;
+                                break;
+
+                            case 4:
+                                sacarPila();
+                                goto ThirdMenu;
+                                break;
+
+                            case 5:
+                                goto ThirdMenu;
+                                break;
+
+                            case 6:
+                                goto SecondMenu;
+                                break;
+
+                            default:
+                                printf("\n   Seleccione un valor valido!");
+                                break;
+                        }
+                        break;
+
+                    case 2:
+                        system("cls");
+                        printf( "\n   ------------------------------------------");
+                        printf( "\n          1.2. Cola");
+                        printf( "\n\n   Introduzca opcion (1-6): ");
+                        printf( "\n\n   1.1. Insertar.");
+                        printf( "\n   1.2. Ver.");
+                        printf( "\n   1.3. Editar");
+                        printf( "\n   1.4. Eliminar");
+                        printf( "\n   1.5. Graficar");
+                        printf( "\n   1.6. Regresar.\n\n" );
+                        printf( "\n\n   Su eleccion: ");
+
+                        scanf( "%d", &opcion );
+
+                        /* Inicio del anidamiento */
+
+                        switch ( opcion )
+                        {
+                            case 1:
+                                break;
+
+                            case 2:
+                                break;
+
+                            case 3:
+                                break;
+
+                            case 4:
+                                break;
+
+                            case 6:
+                                goto SecondMenu;
+                                break;
+
+                            default:
+                                printf("\n   Seleccione un valor valido!");
+                                break;
+                        }
+                        break;
+
+                    case 3:
+                        system("cls");
+                        printf( "\n   ------------------------------------------");
+                        printf( "\n          1.3. Lista Doblemente Enlazada");
+                        printf( "\n\n   Introduzca opcion (1-6): ");
+                        printf( "\n\n   1.1. Insertar.");
+                        printf( "\n   1.2. Ver.");
+                        printf( "\n   1.3. Editar");
+                        printf( "\n   1.4. Eliminar");
+                        printf( "\n   1.5. Graficar");
+                        printf( "\n   1.6. Regresar.\n\n" );
+                        printf( "\n\n   Su eleccion: ");
+
+                        scanf( "%d", &opcion );
+
+                        /* Inicio del anidamiento */
+
+                        switch ( opcion )
+                        {
+                            case 1:
+                                break;
+
+                            case 2:
+                                break;
+
+                            case 3:
+                                break;
+
+                            case 4:
+                                break;
+
+                            case 6:
+                                goto SecondMenu;
+                                break;
+
+                            default:
+                                printf("\n   Seleccione un valor valido!");
+                                break;
+                        }
+                        break;
+
+                    case 4:
+                        system("cls");
+                        printf( "\n   ------------------------------------------");
+                        printf( "\n          1.4. Lista Circula Simplemente Enlazada");
+                        printf( "\n\n   Introduzca opcion (1-6): ");
+                        printf( "\n\n   1.1. Insertar.");
+                        printf( "\n   1.2. Ver.");
+                        printf( "\n   1.3. Editar");
+                        printf( "\n   1.4. Eliminar");
+                        printf( "\n   1.5. Graficar");
+                        printf( "\n   1.6. Regresar.\n\n" );
+                        printf( "\n\n   Su eleccion: ");
+
+                        scanf( "%d", &opcion );
+
+                        /* Inicio del anidamiento */
+
+                        switch ( opcion )
+                        {
+                            case 1:
+                                break;
+
+                            case 2:
+                                break;
+
+                            case 3:
+                                break;
+
+                            case 4:
+                                break;
+
+                            case 6:
+                                goto SecondMenu;
+                                break;
+
+                            default:
+                                printf("\n   Seleccione un valor valido!");
+                                break;
+                        }
+                        break;
+
+                    case 5:
+                        goto FirstMenu;
+                        break;
+
+                    default:
+                        printf("\n   Seleccione un valor valido!");
+                        break;
+                }
+                break;
+
+            case 2:
+                break;
+
+            case 3:
+                printf("\n   Adios");
+                break;
+
+            default:
+                printf("\n   Seleccione un valor valido!");
+                break;
+         }
+
+         /* Fin del anidamiento */
+
+    } while ( opcion != 3 );
+
+    return 0;
+}

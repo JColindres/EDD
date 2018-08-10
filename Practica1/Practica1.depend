@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1533869962 source:c:\users\pablo\documents\1er-sem-2018\edd\practica1\main.cpp
+	<iostream>
+	<stdio.h>
+	"Pila.h"
+
+1533865803 c:\users\pablo\documents\1er-sem-2018\edd\practica1\include\pila.h
+
+1533879117 source:c:\users\pablo\documents\1er-sem-2018\edd\practica1\src\pila.cpp
+	"Pila.h"
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+

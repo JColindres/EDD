@@ -66,25 +66,30 @@ int main()
                         {
                             case 1:
                                 insertarPila();
+                                system("pause");
                                 goto ThirdMenu;
                                 break;
 
                             case 2:
-                                ver();
+                                verPila();
                                 system("pause");
                                 goto ThirdMenu;
                                 break;
 
                             case 3:
+                                editarPila();
+                                system("pause");
                                 goto ThirdMenu;
                                 break;
 
                             case 4:
                                 sacarPila();
+                                system("pause");
                                 goto ThirdMenu;
                                 break;
 
                             case 5:
+                                system("pause");
                                 goto ThirdMenu;
                                 break;
 

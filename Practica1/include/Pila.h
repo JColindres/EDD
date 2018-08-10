@@ -3,7 +3,8 @@
 
 void insertarPila();
 void sacarPila();
-void ver();
+void verPila();
+void editarPila();
 
 class Pila
 {

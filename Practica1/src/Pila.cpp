@@ -84,7 +84,7 @@ void agregarRepetidos(nodo *&repetidos, int i, char v)
     repetidos = nuevo_nodo;
 }
 
-void ver()
+void verPila()
 {
     nodo *aux = pila;
     int id_ingresado, encontrado = 0, contador = 0;
@@ -105,31 +105,46 @@ void ver()
                 aux = aux->siguiente;
             }
         }
+        aux = pila;
         if(encontrado == 1 && contador > 1){
             while(repetidos != NULL){
                 if(repetidos->id == id_ingresado){
-                    nodo* puntero = new nodo();
-                    puntero = *&repetidos;
-                    nodo* sig = &(*puntero);
-
                     cout<<"\n   Id:               "<<repetidos->id<<endl;
-                    cout<<"\n   Valor:            "<<repetidos->valor<<endl;
-                    cout<<"\n\n   Siguiente *:      "<<&(*sig)<<endl;
-                    cout<<"\n   Siguiente id:     "<<(*sig).id<<endl;
-                    cout<<"\n   ---------------------"<<endl;
+                    cout<<"   Valor:            "<<repetidos->valor<<endl;
+                    while(aux != NULL){
+                        if(aux->id == repetidos->id && aux->valor == repetidos->valor){
+                            cout<<"\n   Siguiente *:      "<<aux->siguiente<<endl;
+                            cout<<"   Siguiente id:     "<<aux->siguiente->id<<endl;
+                        }
+                        else{
+                            aux = aux->siguiente;
+                        }
+                    }
+                    cout<<"   ---------------------"<<endl;
                     repetidos = repetidos->siguiente;
                 }
             }
         }
         else if(encontrado == 1){
-            nodo* puntero = new nodo();
-            puntero = *&repetidos;
-            nodo* sig = &(*puntero);
-
+            int ok = 0;
             cout<<"\n   Id:               "<<repetidos->id<<endl;
-            cout<<"\n   Valor:            "<<repetidos->valor<<endl;
-            cout<<"\n\n   Siguiente *:      "<<&(*sig)<<endl;
-            cout<<"\n   Siguiente id:     "<<(*sig).id<<endl;
+            cout<<"   Valor:            "<<repetidos->valor<<endl;
+            while(aux != NULL){
+                if(aux->id == repetidos->id && aux->valor == repetidos->valor){
+                    //nodo* puntero = new nodo();
+                    //puntero = *&aux;
+                    cout<<"\n   Siguiente *:      "<<aux->siguiente<<endl;
+                    cout<<"   Siguiente id:     "<<aux->siguiente->id<<endl;
+                    ok = 1;
+                }
+                else{
+                    aux = aux->siguiente;
+                }
+            }
+            if(aux == NULL && ok == 0){
+                cout<<"\n   Siguiente *:      "<<"NULL"<<endl;
+                cout<<"   Siguiente id:     "<<"NULL"<<endl;
+            }
         }
 
         else{
@@ -152,4 +167,36 @@ int contar()
         aux = aux->siguiente;
     }
     return cont;
+}
+
+void editarPila()
+{
+    int id_ingresado;
+    char valor_ingresado;
+    int ok = 0;
+
+    cout<<"\n   Ingrese el Id que desee modificar valor: "<<endl;
+    cin>>id_ingresado;
+
+    nodo *aux = pila;
+    while(aux != NULL && ok != 1){
+            if(aux->id == id_ingresado){
+                ok = 1;
+            }
+            else{
+                aux = aux->siguiente;
+            }
+    }
+    if(ok == 1){
+        cout<<"\n   Se encontro el Id."<<endl;
+        cout<<"\n   Ingrese el nuevo valor del Id:"<<endl;
+        cin>>valor_ingresado;
+
+        aux->valor = valor_ingresado;
+        cout<<"\n   Se encontro actualizo el id."<<endl;
+        cout<<"\n   Id: "<<aux->id<<" Valor: "<<aux->valor<<endl;
+    }
+    else{
+        cout<<"\n   No se encontro el Id."<<endl;
+    }
 }

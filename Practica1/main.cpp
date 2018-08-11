@@ -150,7 +150,7 @@ int main()
                                 break;
 
                             case 5:
-                                //graficarCOLA();
+                                graficarCOLA();
                                 system("pause");
                                 goto FourthMenu;
                                 break;

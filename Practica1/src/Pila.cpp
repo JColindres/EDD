@@ -170,7 +170,8 @@ void editarPila()
     }
 }
 
-void generarContenidoDot(){
+void generarContenidoDot()
+{
     struct nodo* aux = pila;
     char buffer[3] = "";
     char buuff[3] = "";
@@ -232,13 +233,12 @@ void recorrerAST(int padre, struct nodo *&aux)
 	}
 }
 
-void graficar(){	//	abrimos el archivo para copiar el codigo Graphviz
+void graficar()
+{
 	archivografico = fopen(ubicacion,"w+");
 	if(archivografico){
-			// Copiamos el contenido de la variable "cadena" en el archivo
 		fprintf(archivografico,"%s",cadena);
 		fclose(archivografico);
-			// Compilamos el archivo lista.dot
 		system("dot -Tjpg pila.dot -o pila.jpg");
 		system("start pila.jpg");
 	}else{

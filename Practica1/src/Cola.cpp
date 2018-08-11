@@ -28,8 +28,13 @@ void insertarCola();
 bool colaVacia(nodo *);
 void eliminarCola();
 int contarCola();
-nodo *frente = NULL;
-nodo *fin = NULL;
+void recorrerASTCola(int,struct nodo *&);
+nodo *inicio = NULL;
+nodo *fin= NULL;
+int contadorGC =0;
+FILE *agC;
+char cadenaC[1000];
+char ubicacionC[255] = "C:/Users/pablo/Documents/1er-Sem-2018/Estructura de Datos/Practica1/cola.dot";
 
 void insertarCola()
 {
@@ -46,8 +51,8 @@ void insertarCola()
     nuevo_nodo->valor = valor_ingresado;
     nuevo_nodo->siguiente = NULL;
 
-    if(colaVacia(frente)){
-        frente = nuevo_nodo;
+    if(colaVacia(inicio)){
+        inicio = nuevo_nodo;
     }
     else{
         fin->siguiente = nuevo_nodo;
@@ -56,24 +61,24 @@ void insertarCola()
     cout<<"\n   Id: "<<nuevo_nodo->id<<"   Valor: "<<nuevo_nodo->valor<<endl;
 }
 
-bool colaVacia(nodo *frente)
+bool colaVacia(nodo *inicio)
 {
-    return (frente == NULL)? true : false;
+    return (inicio == NULL)? true : false;
 }
 
 void eliminarCola()
 {
-    nodo *aux = frente;
+    nodo *aux = inicio;
     if(aux == NULL){
         cout<<"\n   La cola esta vacia"<<endl;
         return;
     }
-    if(frente == fin){
-        frente = NULL;
+    if(inicio == fin){
+        inicio = NULL;
         fin = NULL;
     }
     else{
-        frente = frente->siguiente;
+        inicio = inicio->siguiente;
     }
     cout<<"\n   Elemento eliminado: "<<aux->id<<","<<aux->valor<<endl;
     delete(aux);
@@ -82,7 +87,7 @@ void eliminarCola()
 void verCola()
 {
     nodo *aux = (nodo*)malloc(sizeof(nodo));
-    aux = frente;
+    aux = inicio;
     int id_ingresado, ok = 0;
 
     cout<<"\n   Elementos en la cola: "<<contarCola()<<endl;
@@ -121,7 +126,7 @@ void verCola()
 
 int contarCola()
 {
-    nodo *aux = frente;
+    nodo *aux = inicio;
     int cont = 0;
     while(aux != NULL){
         cont++;
@@ -139,7 +144,7 @@ void editarCola()
     cout<<"\n   Ingrese el Id que desee modificar valor: "<<endl;
     cin>>id_ingresado;
 
-    nodo *aux = frente;
+    nodo *aux = inicio;
     while(aux != NULL && ok != 1){
             if(aux->id == id_ingresado){
                 ok = 1;
@@ -160,6 +165,89 @@ void editarCola()
     else{
         cout<<"\n   No se encontro el Id."<<endl;
     }
+}
+
+void generarDotCola()
+{
+    struct nodo* aux = inicio;
+    char buffer[3] = "";
+    char buuff[3] = "";
+    if(aux){
+        strcpy(cadenaC,"digraph G { rankdir=LR;\r\n0[shape=square,label=");
+        sprintf(buffer, "%d", aux->id);
+        sprintf(buuff, "%c", aux->valor);
+        strcat(cadenaC, "\"id: ");
+        strcat(cadenaC, buffer);
+        strcat(cadenaC, " Valor: ");
+        strcat(cadenaC, buuff);
+        strcat(cadenaC, "\"];\n");
+        contadorGC = 1;
+        recorrerASTCola(0,aux);
+        strcat(cadenaC,"}");
+    }
+    else{
+        cout<<"\n   La cola esta vacia."<<endl;
+    }
+}
+
+void recorrerASTCola(int padre, struct nodo *&aux)
+{
+    char buffer[1000] = "";
+    char buuff[1000] = "";
+    char actual[1000] = "";
+    char padree[1000] = "";
+	while(aux){
+		if(aux->siguiente){
+            sprintf(actual, "%d", contadorGC);
+            strcat(cadenaC, actual);
+            strcat(cadenaC,"[shape=circle,label=");
+            sprintf(buffer, "%d", aux->siguiente->id);
+            sprintf(buuff, "%c", aux->siguiente->valor);
+			strcat(cadenaC, "\"id: ");
+			strcat(cadenaC, buffer);
+			strcat(cadenaC, "\nValor: ");
+			strcat(cadenaC, buuff);
+            strcat(cadenaC, "\"];\n");
+            sprintf(padree, "%d", padre);
+            strcat(cadenaC, padree);
+            strcat(cadenaC, "->");
+			strcat(cadenaC, actual);
+            strcat(cadenaC, ";\n");
+            padre = contadorGC;
+			contadorGC++;
+		}else{
+            sprintf(actual, "%d", contadorGC);
+            strcat(cadenaC, actual);
+            strcat(cadenaC,"[shape=doublecircle,label=\"Fin de la Cola\"];\n");
+            sprintf(padree, "%d", padre);
+            strcat(cadenaC, padree);
+            strcat(cadenaC, "->");
+			strcat(cadenaC, actual);
+            strcat(cadenaC, ";\n");
+            //padre = contadorGrafo;
+		}
+		aux = aux->siguiente;
+	}
+}
+
+void graficarC()
+{
+	agC = fopen(ubicacionC,"w+");
+	if(agC){
+		fprintf(agC,"%s",cadenaC);
+		fclose(agC);
+		system("dot -Tjpg cola.dot -o cola.jpg");
+		system("start cola.jpg");
+	}else{
+		printf("%s\n","Error abriendo el archivo :(");
+	}
+}
+
+void graficarCOLA()
+{
+    generarDotCola();
+    puts(cadenaC);
+    graficarC();
 }
 
 

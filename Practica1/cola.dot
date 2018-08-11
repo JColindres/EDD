@@ -1,0 +1,11 @@
+digraph G { rankdir=LR;
+0[shape=square,label="id: 12 Valor: a"];
+1[shape=circle,label="id: 23
+Valor: f"];
+0->1;
+2[shape=circle,label="id: 34
+Valor: r"];
+1->2;
+3[shape=doublecircle,label="Fin de la Cola"];
+2->3;
+}

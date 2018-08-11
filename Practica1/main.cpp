@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include "Pila.h"
+#include "Cola.h"
 using namespace std;
 
 int main()
@@ -89,6 +90,7 @@ int main()
                                 break;
 
                             case 5:
+                                graficarPILA();
                                 system("pause");
                                 goto ThirdMenu;
                                 break;
@@ -104,6 +106,7 @@ int main()
                         break;
 
                     case 2:
+                        FourthMenu:
                         system("cls");
                         printf( "\n   ------------------------------------------");
                         printf( "\n          1.2. Cola");
@@ -123,15 +126,33 @@ int main()
                         switch ( opcion )
                         {
                             case 1:
+                                insertarCola();
+                                system("pause");
+                                goto FourthMenu;
                                 break;
 
                             case 2:
+                                verCola();
+                                system("pause");
+                                goto FourthMenu;
                                 break;
 
                             case 3:
+                                editarCola();
+                                system("pause");
+                                goto FourthMenu;
                                 break;
 
                             case 4:
+                                eliminarCola();
+                                system("pause");
+                                goto FourthMenu;
+                                break;
+
+                            case 5:
+                                //graficarCOLA();
+                                system("pause");
+                                goto FourthMenu;
                                 break;
 
                             case 6:

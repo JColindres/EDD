@@ -34,8 +34,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Cola.h" />
 		<Unit filename="include/Pila.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Cola.cpp" />
 		<Unit filename="src/Pila.cpp" />
 		<Extensions>
 			<code_completion />

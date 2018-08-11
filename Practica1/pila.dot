@@ -1,0 +1,5 @@
+digraph G {
+rankdir=LR; 0[shape=square,label="id: 1 Valor: a"];
+1[shape=doublecircle,label="Fondo"];
+0->1;
+}

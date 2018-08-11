@@ -5,6 +5,7 @@ void insertarPila();
 void sacarPila();
 void verPila();
 void editarPila();
+void graficarPILA();
 
 class Pila
 {

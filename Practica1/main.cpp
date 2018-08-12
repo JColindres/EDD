@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include "Pila.h"
 #include "Cola.h"
+#include "ListaDE.h"
+
 using namespace std;
 
 int main()
@@ -101,6 +103,7 @@ int main()
 
                             default:
                                 printf("\n   Seleccione un valor valido!");
+                                goto ThirdMenu;
                                 break;
                         }
                         break;
@@ -161,11 +164,13 @@ int main()
 
                             default:
                                 printf("\n   Seleccione un valor valido!");
+                                goto FourthMenu;
                                 break;
                         }
                         break;
 
                     case 3:
+                        FifthMenu:
                         system("cls");
                         printf( "\n   ------------------------------------------");
                         printf( "\n          1.3. Lista Doblemente Enlazada");
@@ -185,9 +190,15 @@ int main()
                         switch ( opcion )
                         {
                             case 1:
+                                insertarLDE();
+                                system("pause");
+                                goto FifthMenu;
                                 break;
 
                             case 2:
+                                verListaDE();
+                                system("pause");
+                                goto FifthMenu;
                                 break;
 
                             case 3:

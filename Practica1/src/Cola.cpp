@@ -97,14 +97,14 @@ void verCola()
         while(aux != NULL){
                 if(aux->id == id_ingresado){
                     cout<<"\n   Id:               "<<aux->id<<endl;
-                    cout<<"   Valor:               "<<aux->valor<<endl;
+                    cout<<"   Valor:            "<<aux->valor<<endl;
                     if(aux->siguiente != NULL){
                         cout<<"\n   Siguiente *:      "<<aux->siguiente<<endl;
-                        cout<<"   Siguiente id:      "<<aux->siguiente->id<<endl;
+                        cout<<"   Siguiente id:     "<<aux->siguiente->id<<endl;
                     }
                     else{
                         cout<<"\n   Siguiente *:      NULL"<<endl;
-                        cout<<"   Siguiente id:      NULL"<<endl;
+                        cout<<"   Siguiente id:     NULL"<<endl;
                     }
                     ok = 1;
                     aux = aux->siguiente;
@@ -173,7 +173,7 @@ void generarDotCola()
     char buffer[3] = "";
     char buuff[3] = "";
     if(aux){
-        strcpy(cadenaC,"digraph G { rankdir=LR;\r\n0[shape=square,label=");
+        strcpy(cadenaC,"digraph G {\r\nrankdir=LR;\r\n0[shape=square,label=");
         sprintf(buffer, "%d", aux->id);
         sprintf(buuff, "%c", aux->valor);
         strcat(cadenaC, "\"id: ");
@@ -205,7 +205,7 @@ void recorrerASTCola(int padre, struct nodo *&aux)
             sprintf(buuff, "%c", aux->siguiente->valor);
 			strcat(cadenaC, "\"id: ");
 			strcat(cadenaC, buffer);
-			strcat(cadenaC, "\nValor: ");
+			strcat(cadenaC, " Valor: ");
 			strcat(cadenaC, buuff);
             strcat(cadenaC, "\"];\n");
             sprintf(padree, "%d", padre);

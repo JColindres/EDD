@@ -100,14 +100,14 @@ void verPila()
         while(aux != NULL){
                 if(aux->id == id_ingresado){
                     cout<<"\n   Id:               "<<aux->id<<endl;
-                    cout<<"   Valor:               "<<aux->valor<<endl;
+                    cout<<"   Valor:            "<<aux->valor<<endl;
                     if(aux->siguiente != NULL){
                         cout<<"\n   Siguiente *:      "<<aux->siguiente<<endl;
-                        cout<<"   Siguiente id:      "<<aux->siguiente->id<<endl;
+                        cout<<"   Siguiente id:     "<<aux->siguiente->id<<endl;
                     }
                     else{
                         cout<<"\n   Siguiente *:      NULL"<<endl;
-                        cout<<"   Siguiente id:      NULL"<<endl;
+                        cout<<"   Siguiente id:     NULL"<<endl;
                     }
                     ok = 1;
                     aux = aux->siguiente;
@@ -208,7 +208,7 @@ void recorrerAST(int padre, struct nodo *&aux)
             sprintf(buuff, "%c", aux->siguiente->valor);
 			strcat(cadena, "\"id: ");
 			strcat(cadena, buffer);
-			strcat(cadena, "\nValor: ");
+			strcat(cadena, " Valor: ");
 			strcat(cadena, buuff);
             strcat(cadena, "\"];\n");
             sprintf(padree, "%d", padre);

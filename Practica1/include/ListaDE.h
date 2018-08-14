@@ -3,6 +3,9 @@
 
 void insertarLDE();
 void verListaDE();
+void editarLDE();
+void eliminarLDE();
+void graficarLDE();
 
 class ListaDE
 {

@@ -14,15 +14,16 @@
 	<string.h>
 	<conio.h>
 
-1534105444 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\main.cpp
+1534206512 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\main.cpp
 	<iostream>
 	<stdio.h>
 	"Pila.h"
 	"Cola.h"
+	"ListaDE.h"
 
 1533949098 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\pila.h
 
-1534099548 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\pila.cpp
+1534207758 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\pila.cpp
 	"Pila.h"
 	<iostream>
 	<stdio.h>
@@ -30,7 +31,7 @@
 	<string.h>
 	<conio.h>
 
-1534016419 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\cola.cpp
+1534207758 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\cola.cpp
 	"Cola.h"
 	<iostream>
 	<stdio.h>
@@ -40,7 +41,7 @@
 
 1534015555 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\cola.h
 
-1534109347 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\listade.cpp
+1534207758 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\listade.cpp
 	"ListaDE.h"
 	<iostream>
 	<stdio.h>
@@ -48,5 +49,5 @@
 	<string.h>
 	<conio.h>
 
-1534109346 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\listade.h
+1534206512 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\listade.h
 

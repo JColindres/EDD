@@ -202,9 +202,21 @@ int main()
                                 break;
 
                             case 3:
+                                editarLDE();
+                                system("pause");
+                                goto FifthMenu;
                                 break;
 
                             case 4:
+                                eliminarLDE();
+                                system("pause");
+                                goto FifthMenu;
+                                break;
+
+                            case 5:
+                                graficarLDE();
+                                system("pause");
+                                goto FifthMenu;
                                 break;
 
                             case 6:

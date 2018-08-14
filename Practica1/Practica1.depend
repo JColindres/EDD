@@ -14,12 +14,13 @@
 	<string.h>
 	<conio.h>
 
-1534206512 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\main.cpp
+1534220046 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\main.cpp
 	<iostream>
 	<stdio.h>
 	"Pila.h"
 	"Cola.h"
 	"ListaDE.h"
+	"ListaCSE.h"
 
 1533949098 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\pila.h
 
@@ -50,4 +51,14 @@
 	<conio.h>
 
 1534206512 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\listade.h
+
+1534223005 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\listacse.cpp
+	"ListaCSE.h"
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1534218241 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\listacse.h
 

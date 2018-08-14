@@ -1,12 +1,13 @@
 digraph G {
 rankdir=LR;
-0[shape=doublecircle,label="id: 1 Valor: a"];
-1[shape=circle,label="id: 2
-Valor: a"];
+0[shape=doublecircle,label="id: 2 Valor: a"];
+1[shape=circle,label="id: 3 Valor: a"];
 0->1;
 1->0;
-2[shape=doublecircle,label="id: 3
-Valor: a"];
+2[shape=circle,label="id: 4 Valor: d"];
 1->2;
 2->1;
+3[shape=doublecircle,label="id: 5 Valor: n"];
+2->3;
+3->2;
 }

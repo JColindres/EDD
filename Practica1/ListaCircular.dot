@@ -1,0 +1,11 @@
+digraph G {
+rankdir=LR;
+0[shape=doublecircle,label="id: 1 Valor: a"];
+1[shape=circle,label="id: 2 Valor: w"];
+0->1;
+2[shape=circle,label="id: 3 Valor: w"];
+1->2;
+3[shape=doublecircle,label="id: 6 Valor: e"];
+2->3;
+3->0;
+}

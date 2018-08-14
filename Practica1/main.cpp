@@ -3,6 +3,7 @@
 #include "Pila.h"
 #include "Cola.h"
 #include "ListaDE.h"
+#include "ListaCSE.h"
 
 using namespace std;
 
@@ -13,7 +14,7 @@ int main()
     do
     {
         FirstMenu:
-        //system("cls");
+        system("cls");
         printf( "\n   ------------------------------------------");
         printf( "\n          [EDD-B] Practica 1 - 201602713");
         printf( "\n\n   Introduzca opcion (1-3): ");
@@ -230,6 +231,7 @@ int main()
                         break;
 
                     case 4:
+                        SixthMenu:
                         system("cls");
                         printf( "\n   ------------------------------------------");
                         printf( "\n          1.4. Lista Circula Simplemente Enlazada");
@@ -249,15 +251,33 @@ int main()
                         switch ( opcion )
                         {
                             case 1:
+                                insertarLCSE();
+                                system("pause");
+                                goto SixthMenu;
                                 break;
 
                             case 2:
+                                verLCSE();
+                                system("pause");
+                                goto SixthMenu;
                                 break;
 
                             case 3:
+                                editarLCSE();
+                                system("pause");
+                                goto SixthMenu;
                                 break;
 
                             case 4:
+                                eliminarLCSE();
+                                system("pause");
+                                goto SixthMenu;
+                                break;
+
+                            case 5:
+                                graficarLCSE();
+                                system("pause");
+                                goto SixthMenu;
                                 break;
 
                             case 6:

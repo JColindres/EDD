@@ -37,6 +37,98 @@ FILE *agHC;
 char cadenaHC[1000];
 char ubicacionHC[255] = "C:/Users/pablo/Documents/1er-Sem-2018/Estructura de Datos/Practica1/HojaCalculo.dot";
 
+typedef struct pilap
+{
+    int px;
+    int py;
+    int id;
+    struct pilap *siguiente;
+}pilap;
+
+void pu(pilap *&,int);
+void po(pilap *&);
+pilap *pil = NULL;
+
+void pu(pilap *&pil,int x, int y ,int i )
+{
+    pilap *nuevo_nodo;
+    nuevo_nodo = (pilap*)malloc(sizeof(pilap));
+    nuevo_nodo->px = x;
+    nuevo_nodo->py = y;
+    nuevo_nodo->id = i;
+    nuevo_nodo->siguiente = pil;
+    pil = nuevo_nodo;
+
+    cout<<"\n   Id: "<<i<<endl;
+}
+
+int posix(pilap *&pil)
+{
+    if(pil == NULL){
+        return 0;
+    }
+    pilap *aux = pil;
+    return aux->px;
+}
+
+int posiy(pilap *&pil)
+{
+    if(pil == NULL){
+        return 0;
+    }
+    pilap *aux = pil;
+    return aux->py;
+}
+
+void po(pilap *&pil)
+{
+    if(pil == NULL){
+        return;
+    }
+    pilap *aux = pil;
+    pil = aux->siguiente;
+    delete(aux);
+}
+
+void deshacer()
+{
+    int columnas;
+    int filas;
+    int valor_ingresado;
+
+    columnas = posix(pil);
+    filas = posiy(pil);
+    valor_ingresado = 0;
+
+    struct x *aux = xinicial;
+    int contadorC = 0;
+    if(aux && aux->abajo){
+        while(aux){
+                if(contadorC == columnas){
+                    struct y *auy = aux->abajo;
+                    int contadorF = 0;
+                    if(auy){
+                        while(auy){
+                            if(contadorF == filas){
+                                auy->valor = valor_ingresado;
+                                po(pil);
+                                break;
+                            }
+                            auy = auy->siguiente;
+                            contadorF++;
+                        }
+                        break;
+                    }
+                }
+                contadorC++;
+                aux = aux->siguiente;
+        }
+    }
+    else{
+        cout<<"\n   No hay hoja existente."<<endl;
+    }
+}
+
 void insertarCelda()
 {
     int columnas;
@@ -61,6 +153,7 @@ void insertarCelda()
                         while(auy){
                             if(contadorF == filas){
                                 auy->valor = valor_ingresado;
+                                pu(pil, columnas, filas, valor_ingresado);
                                 break;
                             }
                             auy = auy->siguiente;
@@ -173,6 +266,7 @@ void suma()
                         while(auy){
                             if(contadorF == filaD){
                                 auy->valor = sumar;
+                                pu(pil, columnaD, filaD, sumar);
                                 break;
                             }
                             auy = auy->siguiente;
@@ -273,7 +367,7 @@ void resta()
         cout<<"\n   No hay hoja existente."<<endl;
     }
     restar = valor1 - valor2;
-    cout<<"\n   el valor de la suma es "<<valor1<<"+"<<valor2<<" = "<<restar<<endl;
+    cout<<"\n   el valor de la resta es "<<valor1<<"-"<<valor2<<" = "<<restar<<endl;
     aux = xinicial;
     contadorC = 0;
     if(aux && aux->abajo){
@@ -285,6 +379,7 @@ void resta()
                         while(auy){
                             if(contadorF == filaD){
                                 auy->valor = restar;
+                                pu(pil, columnaD, filaD, restar);
                                 break;
                             }
                             auy = auy->siguiente;
@@ -385,7 +480,7 @@ void multiplicar()
         cout<<"\n   No hay hoja existente."<<endl;
     }
     multi = valor1 * valor2;
-    cout<<"\n   el valor de la suma es "<<valor1<<"*"<<valor2<<" = "<<multi<<endl;
+    cout<<"\n   el valor de la multi es "<<valor1<<"*"<<valor2<<" = "<<multi<<endl;
     aux = xinicial;
     contadorC = 0;
     if(aux && aux->abajo){
@@ -397,6 +492,7 @@ void multiplicar()
                         while(auy){
                             if(contadorF == filaD){
                                 auy->valor = multi;
+                                pu(pil, columnaD, filaD, multi);
                                 break;
                             }
                             auy = auy->siguiente;
@@ -603,5 +699,4 @@ void graficarHC()
     puts(cadenaHC);
     graficarh();
 }
-
 

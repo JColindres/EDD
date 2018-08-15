@@ -7,6 +7,7 @@ void insertarCelda();
 void suma();
 void resta();
 void multiplicar();
+void deshacer();
 
 class HojaDeCalculo
 {

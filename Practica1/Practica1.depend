@@ -25,7 +25,7 @@
 
 1533949098 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\pila.h
 
-1534275619 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\pila.cpp
+1534309423 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\pila.cpp
 	"Pila.h"
 	<iostream>
 	<stdio.h>
@@ -33,7 +33,7 @@
 	<string.h>
 	<conio.h>
 
-1534275892 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\cola.cpp
+1534309423 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\cola.cpp
 	"Cola.h"
 	<iostream>
 	<stdio.h>
@@ -43,7 +43,7 @@
 
 1534015555 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\cola.h
 
-1534275893 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\listade.cpp
+1534311182 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\listade.cpp
 	"ListaDE.h"
 	<iostream>
 	<stdio.h>
@@ -53,7 +53,7 @@
 
 1534206512 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\listade.h
 
-1534275892 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\listacse.cpp
+1534309423 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\listacse.cpp
 	"ListaCSE.h"
 	<iostream>
 	<stdio.h>
@@ -63,7 +63,7 @@
 
 1534218241 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\listacse.h
 
-1534309326 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\hojadecalculo.cpp
+1534312084 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\hojadecalculo.cpp
 	"HojaDeCalculo.h"
 	<iostream>
 	<stdio.h>
@@ -71,5 +71,5 @@
 	<string.h>
 	<conio.h>
 
-1534308456 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\hojadecalculo.h
+1534312167 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\hojadecalculo.h
 

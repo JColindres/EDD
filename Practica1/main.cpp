@@ -312,8 +312,9 @@ int main()
                 printf( "\n   2.3. Sumar.");
                 printf( "\n   2.4. Restar.");
                 printf( "\n   2.5. Multiplicar.");
-                printf( "\n   2.6. Graficar.");
-                printf( "\n   2.7. Regresar.\n\n" );
+                printf( "\n   2.6. Deshacer.");
+                printf( "\n   2.7. Graficar.");
+                printf( "\n   2.8. Regresar.\n\n" );
                 printf( "\n\n   Su eleccion: ");
 
                 scanf( "%d", &opcion );
@@ -353,12 +354,18 @@ int main()
                         break;
 
                     case 6:
-                        graficarHC();
+                        deshacer();
                         system("pause");
                         goto HojaMenu;
                         break;
 
                     case 7:
+                        graficarHC();
+                        system("pause");
+                        goto HojaMenu;
+                        break;
+
+                    case 8:
                         goto FirstMenu;
                         break;
 

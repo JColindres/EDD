@@ -170,8 +170,8 @@ void editarCola()
 void generarDotCola()
 {
     struct nodo* aux = inicio;
-    char buffer[3] = "";
-    char buuff[3] = "";
+    char buffer[1000] = "";
+    char buuff[1000] = "";
     if(aux){
         strcpy(cadenaC,"digraph G {\r\nrankdir=LR;\r\n0[shape=square,label=");
         sprintf(buffer, "%d", aux->id);

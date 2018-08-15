@@ -173,8 +173,8 @@ void editarPila()
 void generarContenidoDot()
 {
     struct nodo* aux = pila;
-    char buffer[3] = "";
-    char buuff[3] = "";
+    char buffer[1000] = "";
+    char buuff[1000] = "";
     if(aux){
         strcpy(cadena,"digraph G {\r\n0[shape=square,label=");
         sprintf(buffer, "%d", aux->id);

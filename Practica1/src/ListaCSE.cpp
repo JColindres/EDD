@@ -76,7 +76,13 @@ void insertarLCSE()
         aux = p;
 
         do{
-            if(nuevo_nodo->id >= aux->id && aux->siguiente == p){
+            if(nuevo_nodo->id < p->id){
+                    nuevo_nodo->siguiente = p;
+                    p = nuevo_nodo;
+                    u->siguiente = p;
+                    break;
+            }
+            else if(nuevo_nodo->id >= aux->id && aux->siguiente == p){
                 u->siguiente = nuevo_nodo;
                 nuevo_nodo->siguiente = p;
                 u = nuevo_nodo;
@@ -195,6 +201,17 @@ void eliminarLCSE()
         aux = p;
         cout<<"\n   Elemento eliminado: "<<aux->id<<","<<aux->valor<<endl;
         p = u;
+        u->siguiente = p;
+        p->siguiente = u;
+        delete(aux);
+    }
+    else if(id_ingresado == p->id && p->siguiente != u){
+        nodo *aux = (nodo*)malloc(sizeof(nodo));
+        aux = p;
+        cout<<"\n   Elemento eliminado: "<<aux->id<<","<<aux->valor<<endl;
+        p = aux->siguiente;
+        p->siguiente = aux->siguiente->siguiente;
+        u->siguiente = p;
         delete(aux);
     }
     else{
@@ -203,7 +220,12 @@ void eliminarLCSE()
         aux = p;
         aux = aux->siguiente;
         while(aux != p){
-            if(id_ingresado == aux->id && aux->siguiente == p){
+            if(p->siguiente->id == aux->id && aux->id == id_ingresado){
+                p->siguiente = aux->siguiente;
+                delete(aux);
+                break;
+            }
+            else if(id_ingresado == aux->id && aux->siguiente == p){
                 u = anterior;
                 u->siguiente = p;
                 delete(aux);
@@ -224,8 +246,8 @@ void eliminarLCSE()
 void generarDotLCSE()
 {
     struct nodo* aux = p;
-    char buffer[3] = "";
-    char buuff[3] = "";
+    char buffer[1000] = "";
+    char buuff[1000] = "";
     if(aux){
         strcpy(cadenaLCSE,"digraph G {\r\nrankdir=LR;\r\n0[shape=doublecircle,label=");
         sprintf(buffer, "%d", aux->id);

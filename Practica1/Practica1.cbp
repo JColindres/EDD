@@ -35,10 +35,14 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Cola.h" />
+		<Unit filename="include/HojaDeCalculo.h" />
+		<Unit filename="include/ListaCSE.h" />
 		<Unit filename="include/ListaDE.h" />
 		<Unit filename="include/Pila.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Cola.cpp" />
+		<Unit filename="src/HojaDeCalculo.cpp" />
+		<Unit filename="src/ListaCSE.cpp" />
 		<Unit filename="src/ListaDE.cpp" />
 		<Unit filename="src/Pila.cpp" />
 		<Extensions>

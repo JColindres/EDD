@@ -81,6 +81,12 @@ void insertarLDE()
         aux = primero;
 
         while(aux != NULL){
+            if(nuevo_nodo->id < primero->id){
+                nuevo_nodo->siguiente = primero;
+                nuevo_nodo->anterior = NULL;
+                primero = nuevo_nodo;
+                break;
+            }
             if(nuevo_nodo->id >= aux->id && aux->siguiente == NULL){
                 ultimo->siguiente = nuevo_nodo;
                 nuevo_nodo->siguiente = NULL;
@@ -246,8 +252,8 @@ void eliminarLDE()
 void generarDotLDE()
 {
     struct nodo* aux = primero;
-    char buffer[3] = "";
-    char buuff[3] = "";
+    char buffer[1000] = "";
+    char buuff[1000] = "";
     if(aux){
         strcpy(cadenaLDE,"digraph G {\r\nrankdir=LR;\r\n0[shape=doublecircle,label=");
         sprintf(buffer, "%d", aux->id);

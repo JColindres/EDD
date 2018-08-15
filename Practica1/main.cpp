@@ -4,6 +4,7 @@
 #include "Cola.h"
 #include "ListaDE.h"
 #include "ListaCSE.h"
+#include "HojaDeCalculo.h"
 
 using namespace std;
 
@@ -301,6 +302,58 @@ int main()
                 break;
 
             case 2:
+                HojaMenu:
+                system("cls");
+                printf( "\n   ------------------------------------------");
+                printf( "\n          2. Hoja de Calculo");
+                printf( "\n\n   Introduzca opcion (1-7): ");
+                printf( "\n\n   2.1. Crear Hoja.");
+                printf( "\n   2.2. Insertar.");
+                printf( "\n   2.3. Sumar.");
+                printf( "\n   2.4. Restar.");
+                printf( "\n   2.5. Multiplicar.");
+                printf( "\n   2.6. Graficar.");
+                printf( "\n   2.7. Regresar.\n\n" );
+                printf( "\n\n   Su eleccion: ");
+
+                scanf( "%d", &opcion );
+
+                /* Inicio del anidamiento */
+
+                switch ( opcion )
+                {
+                    case 1:
+                        crearhoja();
+                        system("pause");
+                        goto HojaMenu;
+                        break;
+
+                    case 2:
+                        break;
+
+                    case 3:
+                        break;
+
+                    case 4:
+                        break;
+
+                    case 5:
+                        break;
+
+                    case 6:
+                        graficarHC();
+                        system("pause");
+                        goto HojaMenu;
+                        break;
+
+                    case 7:
+                        goto FirstMenu;
+                        break;
+
+                    default:
+                        printf("\n   Seleccione un valor valido!");
+                        break;
+                }
                 break;
 
             case 3:

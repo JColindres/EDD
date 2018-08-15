@@ -37,6 +37,382 @@ FILE *agHC;
 char cadenaHC[1000];
 char ubicacionHC[255] = "C:/Users/pablo/Documents/1er-Sem-2018/Estructura de Datos/Practica1/HojaCalculo.dot";
 
+void insertarCelda()
+{
+    int columnas;
+    int filas;
+    int valor_ingresado;
+
+    cout<<"\n   Ingrese el numero de columna donde desee guardar: ";
+    cin>>columnas;
+    cout<<"\n   Ingrese el numero de filas donde desee guardar: ";
+    cin>>filas;
+    cout<<"\n   Ingrese el valor: ";
+    cin>>valor_ingresado;
+
+    struct x *aux = xinicial;
+    int contadorC = 0;
+    if(aux && aux->abajo){
+        while(aux){
+                if(contadorC == columnas){
+                    struct y *auy = aux->abajo;
+                    int contadorF = 0;
+                    if(auy){
+                        while(auy){
+                            if(contadorF == filas){
+                                auy->valor = valor_ingresado;
+                                break;
+                            }
+                            auy = auy->siguiente;
+                            contadorF++;
+                        }
+                        break;
+                    }
+                }
+                contadorC++;
+                aux = aux->siguiente;
+        }
+    }
+    else{
+        cout<<"\n   No hay hoja existente."<<endl;
+    }
+}
+
+void suma()
+{
+    int columnaD;
+    int filaD;
+    int valor1 = 0;
+    int cv1;
+    int fv1;
+    int valor2 = 0;
+    int cv2;
+    int fv2;
+    int sumar;
+
+    cout<<"\n   Ingrese el numero de columna donde desee guardar: ";
+    cin>>columnaD;
+    cout<<"\n   Ingrese el numero de filas donde desee guardar: ";
+    cin>>filaD;
+    cout<<"\n   Ingrese el columna del primer valor: ";
+    cin>>cv1;
+    cout<<"\n   Ingrese el fila del primer valor: ";
+    cin>>fv1;
+    cout<<"\n   Ingrese el columna del segundo valor: ";
+    cin>>cv2;
+    cout<<"\n   Ingrese el fila del segundo valor: ";
+    cin>>fv2;
+
+    struct x *aux = xinicial;
+    int contadorC = 0;
+    valor1++;
+    valor2++;
+    valor1 = 0;
+    valor2 = 0;
+    if(aux && aux->abajo){
+        while(aux){
+                if(contadorC == cv1){
+                    struct y *auy = aux->abajo;
+                    int contadorF = 0;
+                    if(auy){
+                        while(auy){
+                            if(contadorF == fv1){
+                                valor1 = auy->valor;
+                                break;
+                            }
+                            auy = auy->siguiente;
+                            contadorF++;
+                        }
+                        break;
+                    }
+                }
+                contadorC++;
+                aux = aux->siguiente;
+        }
+    }
+    else{
+        cout<<"\n   No hay hoja existente."<<endl;
+    }
+
+    aux = xinicial;
+    contadorC = 0;
+    if(aux && aux->abajo){
+        while(aux){
+                if(contadorC == cv2){
+                    struct y *auy = aux->abajo;
+                    int contadorF = 0;
+                    if(auy){
+                        while(auy){
+                            if(contadorF == fv2){
+                                valor2 = auy->valor;
+                                break;
+                            }
+                            auy = auy->siguiente;
+                            contadorF++;
+                        }
+                        break;
+                    }
+                }
+                contadorC++;
+                aux = aux->siguiente;
+        }
+    }
+    else{
+        cout<<"\n   No hay hoja existente."<<endl;
+    }
+    sumar = valor1 + valor2;
+    cout<<"\n   el valor de la suma es "<<valor1<<"+"<<valor2<<" = "<<sumar<<endl;
+    aux = xinicial;
+    contadorC = 0;
+    if(aux && aux->abajo){
+        while(aux){
+                if(contadorC == columnaD){
+                    struct y *auy = aux->abajo;
+                    int contadorF = 0;
+                    if(auy){
+                        while(auy){
+                            if(contadorF == filaD){
+                                auy->valor = sumar;
+                                break;
+                            }
+                            auy = auy->siguiente;
+                            contadorF++;
+                        }
+                        break;
+                    }
+                }
+                contadorC++;
+                aux = aux->siguiente;
+        }
+    }
+    else{
+        cout<<"\n   No hay hoja existente."<<endl;
+    }
+}
+
+void resta()
+{
+    int columnaD;
+    int filaD;
+    int valor1 = 0;
+    int cv1;
+    int fv1;
+    int valor2 = 0;
+    int cv2;
+    int fv2;
+    int restar;
+
+    cout<<"\n   Ingrese el numero de columna donde desee guardar: ";
+    cin>>columnaD;
+    cout<<"\n   Ingrese el numero de filas donde desee guardar: ";
+    cin>>filaD;
+    cout<<"\n   Ingrese el columna del primer valor: ";
+    cin>>cv1;
+    cout<<"\n   Ingrese el fila del primer valor: ";
+    cin>>fv1;
+    cout<<"\n   Ingrese el columna del segundo valor: ";
+    cin>>cv2;
+    cout<<"\n   Ingrese el fila del segundo valor: ";
+    cin>>fv2;
+
+    struct x *aux = xinicial;
+    int contadorC = 0;
+    valor1++;
+    valor2++;
+    valor1 = 0;
+    valor2 = 0;
+    if(aux && aux->abajo){
+        while(aux){
+                if(contadorC == cv1){
+                    struct y *auy = aux->abajo;
+                    int contadorF = 0;
+                    if(auy){
+                        while(auy){
+                            if(contadorF == fv1){
+                                valor1 = auy->valor;
+                                break;
+                            }
+                            auy = auy->siguiente;
+                            contadorF++;
+                        }
+                        break;
+                    }
+                }
+                contadorC++;
+                aux = aux->siguiente;
+        }
+    }
+    else{
+        cout<<"\n   No hay hoja existente."<<endl;
+    }
+
+    aux = xinicial;
+    contadorC = 0;
+    if(aux && aux->abajo){
+        while(aux){
+                if(contadorC == cv2){
+                    struct y *auy = aux->abajo;
+                    int contadorF = 0;
+                    if(auy){
+                        while(auy){
+                            if(contadorF == fv2){
+                                valor2 = auy->valor;
+                                break;
+                            }
+                            auy = auy->siguiente;
+                            contadorF++;
+                        }
+                        break;
+                    }
+                }
+                contadorC++;
+                aux = aux->siguiente;
+        }
+    }
+    else{
+        cout<<"\n   No hay hoja existente."<<endl;
+    }
+    restar = valor1 - valor2;
+    cout<<"\n   el valor de la suma es "<<valor1<<"+"<<valor2<<" = "<<restar<<endl;
+    aux = xinicial;
+    contadorC = 0;
+    if(aux && aux->abajo){
+        while(aux){
+                if(contadorC == columnaD){
+                    struct y *auy = aux->abajo;
+                    int contadorF = 0;
+                    if(auy){
+                        while(auy){
+                            if(contadorF == filaD){
+                                auy->valor = restar;
+                                break;
+                            }
+                            auy = auy->siguiente;
+                            contadorF++;
+                        }
+                        break;
+                    }
+                }
+                contadorC++;
+                aux = aux->siguiente;
+        }
+    }
+    else{
+        cout<<"\n   No hay hoja existente."<<endl;
+    }
+}
+
+void multiplicar()
+{
+    int columnaD;
+    int filaD;
+    int valor1 = 0;
+    int cv1;
+    int fv1;
+    int valor2 = 0;
+    int cv2;
+    int fv2;
+    int multi;
+
+    cout<<"\n   Ingrese el numero de columna donde desee guardar: ";
+    cin>>columnaD;
+    cout<<"\n   Ingrese el numero de filas donde desee guardar: ";
+    cin>>filaD;
+    cout<<"\n   Ingrese el columna del primer valor: ";
+    cin>>cv1;
+    cout<<"\n   Ingrese el fila del primer valor: ";
+    cin>>fv1;
+    cout<<"\n   Ingrese el columna del segundo valor: ";
+    cin>>cv2;
+    cout<<"\n   Ingrese el fila del segundo valor: ";
+    cin>>fv2;
+
+    struct x *aux = xinicial;
+    int contadorC = 0;
+    valor1++;
+    valor2++;
+    valor1 = 0;
+    valor2 = 0;
+    if(aux && aux->abajo){
+        while(aux){
+                if(contadorC == cv1){
+                    struct y *auy = aux->abajo;
+                    int contadorF = 0;
+                    if(auy){
+                        while(auy){
+                            if(contadorF == fv1){
+                                valor1 = auy->valor;
+                                break;
+                            }
+                            auy = auy->siguiente;
+                            contadorF++;
+                        }
+                        break;
+                    }
+                }
+                contadorC++;
+                aux = aux->siguiente;
+        }
+    }
+    else{
+        cout<<"\n   No hay hoja existente."<<endl;
+    }
+
+    aux = xinicial;
+    contadorC = 0;
+    if(aux && aux->abajo){
+        while(aux){
+                if(contadorC == cv2){
+                    struct y *auy = aux->abajo;
+                    int contadorF = 0;
+                    if(auy){
+                        while(auy){
+                            if(contadorF == fv2){
+                                valor2 = auy->valor;
+                                break;
+                            }
+                            auy = auy->siguiente;
+                            contadorF++;
+                        }
+                        break;
+                    }
+                }
+                contadorC++;
+                aux = aux->siguiente;
+        }
+    }
+    else{
+        cout<<"\n   No hay hoja existente."<<endl;
+    }
+    multi = valor1 * valor2;
+    cout<<"\n   el valor de la suma es "<<valor1<<"*"<<valor2<<" = "<<multi<<endl;
+    aux = xinicial;
+    contadorC = 0;
+    if(aux && aux->abajo){
+        while(aux){
+                if(contadorC == columnaD){
+                    struct y *auy = aux->abajo;
+                    int contadorF = 0;
+                    if(auy){
+                        while(auy){
+                            if(contadorF == filaD){
+                                auy->valor = multi;
+                                break;
+                            }
+                            auy = auy->siguiente;
+                            contadorF++;
+                        }
+                        break;
+                    }
+                }
+                contadorC++;
+                aux = aux->siguiente;
+        }
+    }
+    else{
+        cout<<"\n   No hay hoja existente."<<endl;
+    }
+}
 
 void crearhoja()
 {
@@ -204,7 +580,7 @@ void generarDotHC()
         strcat(cadenaHC,"}");
     }
     else{
-        cout<<"\n   La hoja no se creo."<<endl;
+        strcpy(cadenaHC,"digraph G {0[shape=doublecircle,label=\"Esta vacio\"]}");
     }
 }
 

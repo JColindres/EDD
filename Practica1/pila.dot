@@ -1,5 +1,1 @@
-digraph G {
-0[shape=square,label="id: 100 Valor: s"];
-1[shape=doublecircle,label="Fondo"];
-0->1;
-}
+digraph G {0[shape=doublecircle,label="Esta vacio"]}

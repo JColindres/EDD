@@ -262,7 +262,7 @@ void generarDotLCSE()
         strcat(cadenaLCSE,"}");
     }
     else{
-        cout<<"\n   La lista esta vacia."<<endl;
+        strcpy(cadenaLCSE,"digraph G {0[shape=doublecircle,label=\"Esta vacio\"]}");
     }
 }
 

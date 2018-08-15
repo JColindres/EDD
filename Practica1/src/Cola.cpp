@@ -186,7 +186,7 @@ void generarDotCola()
         strcat(cadenaC,"}");
     }
     else{
-        cout<<"\n   La cola esta vacia."<<endl;
+        strcpy(cadenaC,"digraph G {0[shape=doublecircle,label=\"Esta vacio\"]}");
     }
 }
 

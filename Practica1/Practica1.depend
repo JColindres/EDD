@@ -14,7 +14,7 @@
 	<string.h>
 	<conio.h>
 
-1534295202 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\main.cpp
+1534308456 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\main.cpp
 	<iostream>
 	<stdio.h>
 	"Pila.h"
@@ -63,7 +63,7 @@
 
 1534218241 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\listacse.h
 
-1534305405 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\hojadecalculo.cpp
+1534309326 source:c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\src\hojadecalculo.cpp
 	"HojaDeCalculo.h"
 	<iostream>
 	<stdio.h>
@@ -71,5 +71,5 @@
 	<string.h>
 	<conio.h>
 
-1534295202 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\hojadecalculo.h
+1534308456 c:\users\pablo\documents\1er-sem-2018\estructura de datos\practica1\include\hojadecalculo.h
 

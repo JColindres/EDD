@@ -1,6 +1,1 @@
-digraph G {
-rankdir=LR;
-0[shape=square,label="id: 100 Valor: a"];
-1[shape=doublecircle,label="Fin de la Cola"];
-0->1;
-}
+digraph G {0[shape=doublecircle,label="Esta vacio"]}

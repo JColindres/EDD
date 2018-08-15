@@ -3,6 +3,10 @@
 
 void crearhoja();
 void graficarHC();
+void insertarCelda();
+void suma();
+void resta();
+void multiplicar();
 
 class HojaDeCalculo
 {

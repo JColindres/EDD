@@ -1,4 +1,1 @@
-digraph G {
-rankdir=LR;
-0[shape=doublecircle,label="id: 100 Valor: d"];
-}
+digraph G {0[shape=doublecircle,label="Esta vacio"]}

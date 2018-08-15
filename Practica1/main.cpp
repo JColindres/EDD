@@ -329,15 +329,27 @@ int main()
                         break;
 
                     case 2:
+                        insertarCelda();
+                        system("pause");
+                        goto HojaMenu;
                         break;
 
                     case 3:
+                        suma();
+                        system("pause");
+                        goto HojaMenu;
                         break;
 
                     case 4:
+                        resta();
+                        system("pause");
+                        goto HojaMenu;
                         break;
 
                     case 5:
+                        multiplicar();
+                        system("pause");
+                        goto HojaMenu;
                         break;
 
                     case 6:

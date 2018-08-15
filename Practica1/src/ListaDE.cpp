@@ -268,7 +268,7 @@ void generarDotLDE()
         strcat(cadenaLDE,"}");
     }
     else{
-        cout<<"\n   La lista esta vacia."<<endl;
+        strcpy(cadenaLDE,"digraph G {0[shape=doublecircle,label=\"Esta vacio\"]}");
     }
 }
 

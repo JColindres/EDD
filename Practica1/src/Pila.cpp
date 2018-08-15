@@ -189,7 +189,7 @@ void generarContenidoDot()
         strcat(cadena,"}");
     }
     else{
-        cout<<"\n   La pila esta vacia."<<endl;
+        strcpy(cadena,"digraph G {0[shape=doublecircle,label=\"Esta vacio\"]}");
     }
 }
 

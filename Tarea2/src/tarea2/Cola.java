@@ -13,12 +13,16 @@ import java.util.ArrayList;
  */
 public class Cola implements Queue {
 
-    public static ArrayList numeros = new ArrayList();
+    public static nodo re;
 
     public static class nodo {
 
         public static int id;
         public static nodo siguiente;
+
+        private nodo(int i) {
+            this.id = i;
+        }
 
     }
 
@@ -26,31 +30,34 @@ public class Cola implements Queue {
 
     @Override
     public void insertar(int i) {
-        nodo nuevo = new nodo();
-        nuevo.id = i;
+        nodo nuevo;
+        nuevo = new nodo(i);
         if (cabeza == null) {
             cabeza = nuevo;
-            cabeza.siguiente = null;
-            ultimo = cabeza;
-            numeros.add(cabeza.id);
+            ultimo = nuevo;
         } else {
             ultimo.siguiente = nuevo;
             ultimo = nuevo;
-            ultimo.siguiente = null;
-            numeros.add(ultimo.id);
         }
+        ultimo.siguiente = null;
     }
 
     @Override
     public void eliminar() {
         if (cabeza != null) {
-            nodo eliminar = cabeza;
             cabeza = cabeza.siguiente;
-            eliminar.siguiente = null;
-            eliminar = null;
             if (cabeza == null) {
                 ultimo = null;
             }
+        }
+    }
+
+    @Override
+    public void recorrer() {
+        nodo aaa = cabeza;
+        while(aaa != null){
+            System.out.println("Numero: "+aaa.id);
+            aaa = aaa.siguiente;
         }
     }
 
@@ -59,23 +66,12 @@ public class Cola implements Queue {
         return new ColaIterator();
     }
 
-    public static void contador() {
-        nodo aux = cabeza;
-        numeros = new ArrayList();
-        while (aux != null) {
-            numeros.add(aux.id);
-            aux = aux.siguiente;
-        }
-    }
-
     private class ColaIterator implements Iterator {
-
-        int index;
 
         @Override
         public boolean hasNext() {
 
-            if (index < numeros.size()) {
+            if (re != null) {
                 return true;
             }
             return false;
@@ -84,7 +80,9 @@ public class Cola implements Queue {
         @Override
         public Object next() {
             if (this.hasNext()) {
-                return numeros.get(index++);
+                nodo a = re;
+                re = re.siguiente;
+                return a.id;
             }
             return null;
         }

@@ -17,18 +17,13 @@ public class Tarea2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        NameRepository namesRepository = new NameRepository();
-
-        for (Iterator iter = namesRepository.getIterator(); iter.hasNext();) {
-            String name = (String) iter.next();
-            System.out.println("Name : " + name);
-        }
 
         Scanner teclado = new Scanner(System.in);
 
         int op1 = 0;
         int op2 = 0;
         double precio = 0;
+        Cola c = new Cola();
 
         System.out.println("Seleccione una opcion.");
 
@@ -68,7 +63,6 @@ public class Tarea2 {
 
                         op2 = Integer.parseInt(teclado.next());
                         int i = 0;
-                        Cola c = new Cola();
 
                         if (op2 == 1) {
                             System.out.println("\nIngrese un digito:");
@@ -76,8 +70,8 @@ public class Tarea2 {
                             c.insertar(i);
                         } else if (op2 == 2) {
                             c.eliminar();
-                            c.contador();
                         } else if (op2 == 3) {
+                            Cola.re = Cola.cabeza;
                             for (Iterator iter = c.getIterator(); iter.hasNext();) {
                                 Object name = iter.next();
                                 System.out.println("Numero : " + name);

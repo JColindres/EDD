@@ -13,6 +13,7 @@ public interface Queue {
     
     void insertar (int i);
     void eliminar();
+    void recorrer();
     public Iterator getIterator();
     
 }
